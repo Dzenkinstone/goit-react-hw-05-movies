@@ -3,8 +3,6 @@ import { List } from './MoviesList.styled';
 import { Item } from './MoviesList.styled';
 
 export const MoviesList = ({ movies }) => {
-  const location = useLocation();
-
   console.log(movies);
   return (
     <List>
