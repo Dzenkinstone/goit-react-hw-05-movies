@@ -10,18 +10,17 @@ const MoviesDetails = () => {
   const location = useLocation();
   const { id } = useParams();
   const [movies, setMovies] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
-  console.log(isLoading);
+
+  console.log(location);
+  const backLinkHref = location.state?.from ?? '/';
   useEffect(() => {
     const fetchById = async () => {
       try {
-        setIsLoading(true);
         const responce = await getMoviesById(id);
         setMovies(responce);
       } catch (error) {
         toast('There is no film with that name...');
       } finally {
-        setIsLoading(false);
       }
     };
 
@@ -30,7 +29,7 @@ const MoviesDetails = () => {
 
   return (
     <>
-      <BackButton location={location} />
+      <BackButton backLinkHref={backLinkHref} />
       <MoviesInformation movies={movies} /> <Toaster />
       <Suspense fallback={<div>Loading subpage...</div>}>
         <Outlet />

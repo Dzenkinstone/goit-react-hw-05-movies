@@ -6,7 +6,6 @@ import { useSearchParams } from 'react-router-dom';
 
 const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);
   const name = searchParams.get('value');
 
@@ -14,7 +13,6 @@ const Movies = () => {
 
   const handleSubmit = (event, value, setValue) => {
     event.preventDefault();
-    setQuery(value);
     const nextParams = value !== '' ? { value } : {};
     setSearchParams(nextParams);
     setValue('');
@@ -22,7 +20,7 @@ const Movies = () => {
 
   useEffect(() => {
     const fetchMovie = async () => {
-      if (query === '') {
+      if (!name) {
         return;
       }
 
@@ -37,7 +35,7 @@ const Movies = () => {
     };
 
     fetchMovie();
-  }, [query, name]);
+  }, [name]);
 
   return (
     <main>
