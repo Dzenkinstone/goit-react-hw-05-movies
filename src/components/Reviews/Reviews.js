@@ -12,7 +12,6 @@ const Reviews = () => {
       try {
         const responce = await getMovieReviews(id);
         setReviews(responce.results);
-        console.log(responce);
       } catch (error) {
         console.log(error);
       }
@@ -20,8 +19,6 @@ const Reviews = () => {
 
     fetchReviews();
   }, [id]);
-
-  console.log(reviews);
 
   return (
     <>

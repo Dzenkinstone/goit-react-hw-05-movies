@@ -9,8 +9,6 @@ const Movies = () => {
   const [movies, setMovies] = useState([]);
   const name = searchParams.get('value');
 
-  console.log(searchParams);
-
   const handleSubmit = (event, value, setValue) => {
     event.preventDefault();
     const nextParams = value !== '' ? { value } : {};
@@ -26,7 +24,7 @@ const Movies = () => {
 
       try {
         const responce = await getMovieByQuery(name);
-        console.log(responce);
+
         setMovies(responce.results);
         console.log(responce);
       } catch (error) {

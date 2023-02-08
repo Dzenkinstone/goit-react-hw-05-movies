@@ -14,7 +14,6 @@ const Cast = () => {
       try {
         const responce = await getMovieCredits(id);
         setCredits(responce.cast);
-        console.log(responce);
       } catch (error) {
         console.log(error);
       }
