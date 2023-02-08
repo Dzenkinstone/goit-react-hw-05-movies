@@ -1,5 +1,5 @@
 import { Suspense, useEffect, useState } from 'react';
-import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
+import { Outlet, useLocation, useParams } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import { getMoviesById } from 'api';
 
@@ -12,6 +12,7 @@ const MoviesDetails = () => {
   const { id } = useParams();
   const [movies, setMovies] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  console.log(isLoading);
   useEffect(() => {
     const fetchById = async () => {
       try {

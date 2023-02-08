@@ -10,7 +10,7 @@ const Reviews = lazy(() => import('components/Reviews'));
 
 export const App = () => {
   return (
-    <Routes basename="goit-react-hw-05-movies">
+    <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<Home />} />
         <Route path="/movies" element={<Movies />} />
