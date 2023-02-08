@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 import { Button } from './BackButton.styled';
 
 export const BackButton = ({ location }) => {
-  console.log(location);
   return (
     <>
       <NavLink to={`${location}`}>

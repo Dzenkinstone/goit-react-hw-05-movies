@@ -10,7 +10,7 @@ export const MoviesList = ({ movies }) => {
     <List>
       {movies.map(({ id, title, name }) => (
         <Item key={id}>
-          <NavLink to={`/movies/${id}`} state={{ from: location }}>
+          <NavLink to={`/movies/${id}`}>
             <p>{title ?? name}</p>
           </NavLink>
         </Item>
