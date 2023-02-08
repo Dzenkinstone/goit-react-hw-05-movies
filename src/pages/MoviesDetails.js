@@ -8,7 +8,6 @@ import { BackButton } from 'components/BackButton';
 
 const MoviesDetails = () => {
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? '/';
   const { id } = useParams();
   const [movies, setMovies] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -31,7 +30,7 @@ const MoviesDetails = () => {
 
   return (
     <>
-      <BackButton location={backLinkHref} />
+      <BackButton location={location} />
       <MoviesInformation movies={movies} /> <Toaster />
       <Suspense fallback={<div>Loading subpage...</div>}>
         <Outlet />
