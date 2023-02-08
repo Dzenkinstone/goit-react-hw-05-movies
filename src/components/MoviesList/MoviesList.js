@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { List } from './MoviesList.styled';
 import { Item } from './MoviesList.styled';
 
